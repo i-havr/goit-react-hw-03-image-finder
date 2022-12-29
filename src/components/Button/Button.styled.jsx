@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 export const ButtonStyled = styled.button`
   padding: 8px 16px;
-  border-radius: 2px;
-  background-color: #3f51b5;
+  background-color: #606dbc;
   transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
   text-align: center;
   display: inline-block;
   color: #fff;
   border: 0;
+  border-radius: 4px;
   text-decoration: none;
   cursor: pointer;
   font-family: inherit;
@@ -24,6 +24,6 @@ export const ButtonStyled = styled.button`
 
   &:hover,
   &:focus {
-    background-color: #303f9f;
+    background-color: #465298;
   }
 `;

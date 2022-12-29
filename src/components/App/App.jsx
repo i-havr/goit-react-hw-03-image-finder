@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { ToastContainer } from 'react-toastify';
+import { Loader } from 'components/Loader/Loader';
 import { AppStyled } from './App.styled';
 import { Searchbar } from 'components/Searchbar/Searchbar';
 import { ImageGallery } from 'components/ImageGallery/ImageGallery';
@@ -16,7 +17,6 @@ export class App extends Component {
   };
 
   handleLoading = isLoading => {
-    console.log(isLoading);
     this.setState({ isLoading });
   };
 
@@ -31,7 +31,7 @@ export class App extends Component {
             loadingStatus={this.handleLoading}
           />
         )}
-        {isLoading && <p>Loading...</p>}
+        {isLoading && <Loader />}
         <Button />
         <ToastContainer autoClose={3000} />
       </AppStyled>

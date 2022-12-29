@@ -14,19 +14,34 @@ export const SearchbarStyled = styled.header`
   padding-top: 12px;
   padding-bottom: 12px;
   color: #fff;
-  background-color: #3f51b5;
+  /* background-color: #3f51b5; */
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #606dbc,
+    #606dbc 10px,
+    #465298 10px,
+    #465298 20px
+  );
   box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
     0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 `;
 
 export const SearchFormStyled = styled.form`
-  display: flex;
+  /* display: flex;
   align-items: center;
   width: 100%;
   max-width: 600px;
   background-color: #fff;
   border-radius: 3px;
-  overflow: hidden;
+  overflow: hidden; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  // flex-direction: column;
+  width: 350px;
 `;
 
 // export const SearchFormButtonStyled = styled.button`
@@ -61,7 +76,7 @@ export const SearchFormStyled = styled.form`
 // `;
 
 export const SearchFormInputStyled = styled.input`
-  display: inline-block;
+  /* display: inline-block;
   width: 100%;
   font: inherit;
   font-size: 20px;
@@ -73,5 +88,21 @@ export const SearchFormInputStyled = styled.input`
   &::placeholder {
     font: inherit;
     font-size: 18px;
-  }
+  } */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  padding-left: 16px;
+  padding-right: 48px;
+  // margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: #212121;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  background-color: #ffffff;
 `;

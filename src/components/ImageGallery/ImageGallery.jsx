@@ -10,12 +10,15 @@ export class ImageGallery extends Component {
   };
 
   async componentDidMount() {
+    this.props.loadingStatus(true);
     try {
       const query = this.props.query;
       const images = await fetchImagesWithQuery(query);
       this.setState({ images });
     } catch (error) {
       return toast.error('Whoops, something went wrong: ', error.message);
+    } finally {
+      this.props.loadingStatus(false);
     }
   }
 
@@ -23,8 +26,10 @@ export class ImageGallery extends Component {
     try {
       const query = this.props.query;
       if (prevProps.query !== query) {
+        this.props.loadingStatus(true);
         const images = await fetchImagesWithQuery(query);
         this.setState({ images: [...images] });
+        this.props.loadingStatus(false);
       }
     } catch (error) {
       return toast.error('Whoops, something went wrong: ', error.message);
