@@ -12,14 +12,15 @@ class Modal extends Component {
     window.removeEventListener('keydown', this.handleKeyDown);
   }
 
-    handleKeyDown = event => event.code === 'Escape' && this.props.onClose();
-    
-    handleBackdropClick = event =>
-        event.currentTarget === event.target && this.props.onClose();
+  handleKeyDown = event => event.code === 'Escape' && this.props.onClose();
+
+  handleBackdropClick = event =>
+    event.currentTarget === event.target && this.props.onClose();
 
   render() {
     return createPortal(
-      <BackdropStyled onClick={}>
+      <BackdropStyled>
+        {/* <BackdropStyled onClick={}> */}
         <ModalStyled>
           <img src="" alt="" />
         </ModalStyled>
