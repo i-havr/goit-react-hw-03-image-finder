@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { createPortal } from 'react-dom';
-const modalRoot = document.querySelector('#modal-root');
-import { BackdropStyled, ModalStyled } from './Modal.styled';
+// import React, { Component } from 'react';
+// import { createPortal } from 'react-dom';
+// const modalRoot = document.querySelector('#modal-root');
+// import { BackdropStyled, ModalStyled } from './Modal.styled';
 
 // class Modal extends Component {
 //   componentDidMount() {
