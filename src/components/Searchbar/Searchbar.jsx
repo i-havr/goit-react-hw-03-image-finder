@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {
   SearchbarStyled,
   SearchFormStyled,
-  // SearchFormButtonStyled,
-  // SearchFormButtonLabelStyled,
   SearchFormInputStyled,
 } from './Searchbar.styled';
 import { IconButton } from './IconButton/IconButton';
@@ -52,7 +51,7 @@ export class Searchbar extends Component {
             type="text"
             autoComplete="off"
             autoFocus
-            value={this.state.query}
+            // value={this.state.query}
             onChange={this.handleInputChange}
             placeholder="Search images and photos"
           />
@@ -61,3 +60,7 @@ export class Searchbar extends Component {
     );
   }
 }
+
+Searchbar.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
