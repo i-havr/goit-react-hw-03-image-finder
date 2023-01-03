@@ -18,8 +18,10 @@ const Status = {
 };
 
 export class App extends Component {
-  // Дефолтне значення perPage для того, щоб з його допомогою отримати загальну кількість сторінок.
-  // Це дозволяє зробити так, щоб кнопка LoadMore зникала на останній сторінці.
+  static propTypes = {
+    perPage: PropTypes.number.isRequired,
+  };
+
   static defaultProps = {
     perPage: 12,
   };
@@ -71,7 +73,6 @@ export class App extends Component {
             tags: tags,
           })
         );
-        console.log(newHits);
 
         this.setState({
           images: [...newHits],
@@ -101,7 +102,6 @@ export class App extends Component {
         webformatURL: webformatURL,
         tags: tags,
       }));
-      console.log(newHits);
       this.setState(prevState => ({
         images: [...prevState.images, ...newHits],
         status: Status.RESOLVED,
@@ -146,7 +146,3 @@ export class App extends Component {
     );
   }
 }
-
-App.propTypes = {
-  perPage: PropTypes.number.isRequired,
-};
