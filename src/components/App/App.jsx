@@ -62,8 +62,19 @@ export class App extends Component {
     try {
       const { hits, totalHits } = await fetchImages(query);
       if (hits.length > 0) {
+        // записуємо в state тільки властивості id, tags, webformatURL, largeImageURL
+        const newHits = hits.map(
+          ({ id, tags, webformatURL, largeImageURL }) => ({
+            id: id,
+            largeImageURL: largeImageURL,
+            webformatURL: webformatURL,
+            tags: tags,
+          })
+        );
+        console.log(newHits);
+
         this.setState({
-          images: [...hits],
+          images: [...newHits],
           totalPages: Math.ceil(totalHits / perPage),
           status: Status.RESOLVED,
         });
@@ -83,8 +94,16 @@ export class App extends Component {
     this.setState({ status: Status.PENDING });
     try {
       const { hits } = await fetchImages(query, page);
+      // записуємо в state тільки властивості id, tags, webformatURL, largeImageURL
+      const newHits = hits.map(({ id, tags, webformatURL, largeImageURL }) => ({
+        id: id,
+        largeImageURL: largeImageURL,
+        webformatURL: webformatURL,
+        tags: tags,
+      }));
+      console.log(newHits);
       this.setState(prevState => ({
-        images: [...prevState.images, ...hits],
+        images: [...prevState.images, ...newHits],
         status: Status.RESOLVED,
       }));
     } catch (error) {
